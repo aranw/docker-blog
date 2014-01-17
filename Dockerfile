@@ -17,7 +17,7 @@ RUN    apt-get --yes upgrade --force-yes
 RUN    apt-get --yes install git supervisor nginx php5-mcrypt php5-gd php5-mysql mysql-server pwgen wget php5-fpm --force-yes
 RUN    mkdir -p /srv/www/; cd /srv/www/; git clone -b master https://github.com/wardrobecms/wardrobe.git blog
 RUN    apt-get --yes install php5-cli curl --force-yes
-RUN    cd /srv/www/blog;  curl -sS https://getcomposer.org/installer | php; php composer.phar install
+RUN    cd /srv/www/blog;  curl -sS https://getcomposer.org/installer | php; php composer.phar install --prefer-source
 
 # Load in all of our config files.
 ADD    ./nginx/nginx.conf /etc/nginx/nginx.conf

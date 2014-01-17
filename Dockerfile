@@ -14,7 +14,7 @@ RUN    add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu $(lsb_release
 RUN    add-apt-repository -y ppa:nginx/stable
 RUN    apt-get --yes update
 RUN    apt-get --yes upgrade --force-yes
-RUN    apt-get --yes install git supervisor nginx php5-mcrypt php5-mysql mysql-server pwgen wget php5-fpm --force-yes
+RUN    apt-get --yes install git supervisor nginx php5-mcrypt php5-gd php5-mysql mysql-server pwgen wget php5-fpm --force-yes
 RUN    mkdir -p /srv/www/; cd /srv/www/; git clone -b master https://github.com/wardrobecms/wardrobe.git blog
 RUN    apt-get --yes install php5-cli curl --force-yes
 RUN    cd /srv/www/blog;  curl -sS https://getcomposer.org/installer | php; php composer.phar install
